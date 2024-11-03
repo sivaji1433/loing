@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" id="login">
+      <input type="email" name="email" id="email" placeholder="EMAIL" />
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="PASSWORD" />
+     
+      <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <script>
+           document.getElementById("login").addEventListener("submit", (e) => {
+          e.preventDefault();
+          let email = document.getElementsByName("email")[0].value;
+          let password = document.getElementsByName("password")[0].value;
+          let message = document.getElementById("message");
+          if (email === "sivajinn993@gmail.com" && password === "sivaji") {
+            message.textContent = "loginsucessfull";
+            message.className = "sucess";
+            setTimeout(() => {
+              window.location.href =
+         "http://127.0.0.1:3000/c:/Users/HP/Desktop/script.js/js task16/login.html";
+            });
+          } else if (email !== "sivaji" && password === "sivaji") {
+            message.textContent = "invalid email";
+          } else if (email === "sivajinn993@gmail.com" && password !== "sivaji") {
+            message.textContent = "invalid password";
+          } else {
+            message.textContent = "invalid data";
+          }
+        });
+
+    </script>
+  </body>
+</html>
